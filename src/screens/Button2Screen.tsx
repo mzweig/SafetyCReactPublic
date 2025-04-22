@@ -1,16 +1,20 @@
 import React from 'react';
-import { View, Image, TouchableOpacity, StyleSheet, Text } from 'react-native';
+import { View, Image, TouchableOpacity, StyleSheet, Text, SafeAreaView, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { StatusBar } from 'react-native';
 
 const Button2Screen = () => {
   const navigation = useNavigation();
+  
   return (
     <View style={styles.container}>
-      <TouchableOpacity 
-        style={styles.backButton}
-        onPress={() => navigation.navigate('Home')}>
-        <Text style={styles.backArrow}>←</Text>
-      </TouchableOpacity>
+      <SafeAreaView style={styles.safeArea}>
+        <TouchableOpacity 
+          style={[styles.backButton, { top: -40 }]}
+          onPress={() => navigation.navigate('Home')}>
+          <Text style={styles.backArrow}>←</Text>
+        </TouchableOpacity>
+      </SafeAreaView>
       <Image
         source={require('../assets/lakedata.png')}
         style={styles.image}
@@ -25,6 +29,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#000',
   },
+  safeArea: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: 1,
+  },
   image: {
     flex: 1,
     width: '100%',
@@ -32,13 +43,12 @@ const styles = StyleSheet.create({
   },
   backButton: {
     position: 'absolute',
-    top: 20,
     left: 20,
     zIndex: 1,
   },
   backArrow: {
     color: '#000',
-    fontSize: 30,
+    fontSize: 90,
   }
 });
 
