@@ -1,9 +1,19 @@
-import React from 'react';
-import { View, Image, TouchableOpacity, StyleSheet, Text, SafeAreaView } from 'react-native';
+import React, { useState } from 'react';
+import { View, Image, TouchableOpacity, StyleSheet, Text, SafeAreaView, Modal, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const Button3Screen = () => {
   const navigation = useNavigation();
+  const [showBluetoothModal, setShowBluetoothModal] = useState(false);
+
+  const handleBluetoothPress = () => {
+    setShowBluetoothModal(true);
+  };
+
+  const closeBluetoothModal = () => {
+    setShowBluetoothModal(false);
+  };
+
   return (
     <View style={styles.container}>
       <SafeAreaView style={styles.safeArea}>
@@ -18,8 +28,34 @@ const Button3Screen = () => {
         style={styles.image}
         resizeMode="contain"
       />
-      <View style={styles.bluetoothMarker} />
+      <TouchableOpacity
+        style={styles.bluetoothMarker}
+        onPress={handleBluetoothPress}
+      />
       <View style={styles.instructionsMarker} />
+      
+      {/* Bluetooth Connection Modal */}
+      <Modal
+        animationType="fade"
+        transparent={true}
+        visible={showBluetoothModal}
+        onRequestClose={closeBluetoothModal}
+      >
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalContent}>
+            <Text style={styles.modalTitle}>Connect to Device</Text>
+            <Text style={styles.modalText}>
+              Please connect to the SafetyC device using Bluetooth Classic in your device settings.
+            </Text>
+            <TouchableOpacity
+              style={styles.modalButton}
+              onPress={closeBluetoothModal}
+            >
+              <Text style={styles.modalButtonText}>Close</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 };
@@ -56,9 +92,9 @@ const styles = StyleSheet.create({
     left: '12%',
     width: 260,
     height: 96,
-    borderWidth: 2,
-    borderColor: 'red',
-    backgroundColor: 'rgba(255, 0, 0, 0.2)',
+    borderWidth: 0,
+    borderColor: 'transparent',
+    backgroundColor: 'transparent',
     zIndex: 2,
   },
   instructionsMarker: {
@@ -71,7 +107,41 @@ const styles = StyleSheet.create({
     borderColor: 'red',
     backgroundColor: 'rgba(255, 0, 0, 0.2)',
     zIndex: 2,
-  }
+  },
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modalContent: {
+    backgroundColor: 'white',
+    borderRadius: 10,
+    padding: 20,
+    width: '80%',
+    alignItems: 'center',
+  },
+  modalTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 15,
+  },
+  modalText: {
+    fontSize: 16,
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+  modalButton: {
+    backgroundColor: '#007AFF',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 5,
+  },
+  modalButtonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
 });
 
 export default Button3Screen; 
