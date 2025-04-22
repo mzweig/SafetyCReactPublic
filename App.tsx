@@ -14,6 +14,10 @@ import Button2Screen from './src/screens/Button2Screen';
 import Button3Screen from './src/screens/Button3Screen';
 import Button4Screen from './src/screens/Button4Screen';
 import Button5Screen from './src/screens/Button5Screen';
+import WhatIsCCSScreen from './src/screens/WhatIsCCSScreen';
+import CCSBenefitsScreen from './src/screens/CCSBenefitsScreen';
+import DangersOfCCSScreen from './src/screens/DangersOfCCSScreen';
+import VoicesOnCCSScreen from './src/screens/VoicesOnCCSScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +35,10 @@ function App(): React.JSX.Element {
         <Stack.Screen name="Button3" component={Button3Screen} />
         <Stack.Screen name="Button4" component={Button4Screen} />
         <Stack.Screen name="Button5" component={Button5Screen} />
+        <Stack.Screen name="WhatIsCCS" component={WhatIsCCSScreen} />
+        <Stack.Screen name="CCSBenefits" component={CCSBenefitsScreen} />
+        <Stack.Screen name="DangersOfCCS" component={DangersOfCCSScreen} />
+        <Stack.Screen name="VoicesOnCCS" component={VoicesOnCCSScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
