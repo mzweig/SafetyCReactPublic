@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     left: '10%',
     width: '35%',
     height: '15.6%',
-    backgroundColor: 'rgba(255, 0, 0, 0.75)',
+    backgroundColor: 'transparent',
   },
   button2: {
     position: 'absolute',
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     right: '10%',
     width: '35%',
     height: '15.6%',
-    backgroundColor: 'rgba(255, 0, 0, 0.75)',
+    backgroundColor: 'transparent',
   },
   button3: {
     position: 'absolute',
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     left: '10%',
     width: '35%',
     height: '15.6%',
-    backgroundColor: 'rgba(255, 0, 0, 0.75)',
+    backgroundColor: 'transparent',
   },
   button4: {
     position: 'absolute',
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     right: '10%',
     width: '35%',
     height: '15.6%',
-    backgroundColor: 'rgba(255, 0, 0, 0.75)',
+    backgroundColor: 'transparent',
   },
   button5: {
     position: 'absolute',
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     left: '25%',
     width: '50%',
     height: '15.6%',
-    backgroundColor: 'rgba(255, 0, 0, 0.75)',
+    backgroundColor: 'transparent',
   },
 });
 
