@@ -8,7 +8,7 @@ const Button1Screen = () => {
     <View style={styles.container}>
       <SafeAreaView style={styles.safeArea}>
         <TouchableOpacity 
-          style={styles.backButton}
+          style={[styles.backButton, { top: -40 }]}
           onPress={() => navigation.navigate('Home')}>
           <Text style={styles.backArrow}>←</Text>
         </TouchableOpacity>
