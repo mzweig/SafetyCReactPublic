@@ -20,6 +20,9 @@ const Button2Screen = () => {
         style={styles.image}
         resizeMode="contain"
       />
+      <View style={styles.dateOverlay}>
+        <Text style={styles.dateText}>4/28/25</Text>
+      </View>
     </View>
   );
 };
@@ -49,6 +52,20 @@ const styles = StyleSheet.create({
   backArrow: {
     color: '#000',
     fontSize: 90,
+  },
+  dateOverlay: {
+    position: 'absolute',
+    top: '19%',
+    left: '35%',
+    backgroundColor: '#749EB5',
+    padding: 5,
+    borderRadius: 3,
+    zIndex: 1,
+  },
+  dateText: {
+    color: '#F5F5F5',
+    fontSize: 24,
+    fontWeight: '500',
   }
 });
 
