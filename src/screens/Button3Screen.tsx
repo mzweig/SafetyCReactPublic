@@ -18,6 +18,8 @@ const Button3Screen = () => {
         style={styles.image}
         resizeMode="contain"
       />
+      <View style={styles.bluetoothMarker} />
+      <View style={styles.instructionsMarker} />
     </View>
   );
 };
@@ -47,6 +49,28 @@ const styles = StyleSheet.create({
   backArrow: {
     color: '#000',
     fontSize: 90,
+  },
+  bluetoothMarker: {
+    position: 'absolute',
+    top: '35%',
+    left: '12%',
+    width: 260,
+    height: 96,
+    borderWidth: 2,
+    borderColor: 'red',
+    backgroundColor: 'rgba(255, 0, 0, 0.2)',
+    zIndex: 2,
+  },
+  instructionsMarker: {
+    position: 'absolute',
+    top: '50%',
+    left: '12%',
+    width: 260,
+    height: 60,
+    borderWidth: 2,
+    borderColor: 'red',
+    backgroundColor: 'rgba(255, 0, 0, 0.2)',
+    zIndex: 2,
   }
 });
 
