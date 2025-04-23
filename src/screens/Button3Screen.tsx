@@ -32,7 +32,10 @@ const Button3Screen = () => {
         style={styles.bluetoothMarker}
         onPress={handleBluetoothPress}
       />
-      <View style={styles.instructionsMarker} />
+      <TouchableOpacity 
+        style={styles.instructionsMarker}
+        onPress={() => navigation.navigate('Instruct1')}
+      />
       
       {/* Bluetooth Connection Modal */}
       <Modal
@@ -103,9 +106,9 @@ const styles = StyleSheet.create({
     left: '12%',
     width: 260,
     height: 60,
-    borderWidth: 2,
-    borderColor: 'red',
-    backgroundColor: 'rgba(255, 0, 0, 0.2)',
+    borderWidth: 0,
+    borderColor: 'transparent',
+    backgroundColor: 'transparent',
     zIndex: 2,
   },
   modalOverlay: {
